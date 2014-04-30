@@ -1,0 +1,13 @@
+package ming.service.impl;
+
+import ming.service.ITransactionDemoService;
+
+public class TransactionDemoServiceImpl implements ITransactionDemoService {
+
+	@Override
+	public void tSaveInfo(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

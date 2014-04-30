@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demoBean">
+
+	<resultMap type="demoBean" id="resultAll">
+		<id property="id" column="ID"/>
+		<result property="name" column="NAME"/>
+	</resultMap>
+	<select id="getAll" resultType="demoBean">  <!-- 查询表中记录总数 -->
+		SELECT ID,NAME FROM WP_QZ.TEMPTABLE
+	</select>
+
+	<insert id="insertDemo" parameterType="demoBean">
+		INSERT INTO WP_QZ.TEMPTABLE VALUES(#id,#name)
+	</insert>
+</mapper>

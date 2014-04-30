@@ -1,0 +1,15 @@
+package ming.tag;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class TableFormTag extends TagSupport {
+	public int doEndTag(){
+		try {
+			pageContext.getOut().println("<input type=\"text\" value=\"tag test\">");
+		} catch (IOException ignored) {
+		}
+		return EVAL_PAGE;
+	}
+}

@@ -1,0 +1,9 @@
+package ming.service;
+
+import ming.service.impl.DemoBean;
+import ming.service.impl.List;
+
+public interface ITransactionDemoService {
+	public void tSaveInfo(String name) throws Exception;
+	public List<DemoBean> getAll() throws Exception;
+}

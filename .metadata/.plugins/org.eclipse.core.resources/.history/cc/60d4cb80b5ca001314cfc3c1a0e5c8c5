@@ -1,0 +1,7 @@
+package ming.tag;
+
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class TableFormTag extends TagSupport {
+
+}

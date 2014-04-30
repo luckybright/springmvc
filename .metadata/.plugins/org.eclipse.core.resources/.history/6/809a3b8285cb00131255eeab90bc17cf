@@ -1,0 +1,31 @@
+package ming;
+
+import java.lang.reflect.Method;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class ProductController extends MultiActionController {
+	Logger log = Logger.getLogger(ProductController.class);
+	public ModelAndView viewHandler(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		resp.getOutputStream().println("viewing product " + req.getParameter("productId"));
+		return null;
+	}
+	
+	public ModelAndView tableformHandler(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		String className = req.getParameter("className");
+		Class beanClass = Class.forName(className);
+		Object bean = beanClass.newInstance();
+		Method[] methods = bean.getClass().getDeclaredMethods();
+		for ( int i = 0; i < methods.length; i++){
+			if ( methods[i].getName().startsWith("get")){
+				
+			}
+		}
+		return null;
+	}
+}

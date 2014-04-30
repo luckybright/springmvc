@@ -1,0 +1,5 @@
+package ming.service;
+
+public interface ITransactionDemoService {
+	public void tSaveInfo(String name) throws Exception;
+}

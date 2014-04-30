@@ -1,0 +1,79 @@
+package ming.tag;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class TableFormTag extends TagSupport {
+	private static final long serialVersionUID = 4413127515990076611L;
+
+	private String columnNames;
+	private String columnEchoNames;
+	private String action;
+	private String method;
+	
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
+	public String getMethod() {
+		return method;
+	}
+
+	public void setMethod(String method) {
+		this.method = method;
+	}
+
+	public String getColumnNames() {
+		return columnNames;
+	}
+
+	public void setColumnNames(String columnNames) {
+		this.columnNames = columnNames;
+	}
+
+	public String getColumnEchoNames() {
+		return columnEchoNames;
+	}
+
+	public void setColumnEchoNames(String columnEchoNames) {
+		this.columnEchoNames = columnEchoNames;
+	}
+
+	public int doStartTag(){
+		String values[] = columnEchoNames.split(",");
+		try {
+			StringBuffer head = new StringBuffer();
+			head.append("<thead>");
+			appendTd(values, head);
+			head.append("</thead>");
+			
+			//tbody tr td input name="values[i]" td tr tbody
+			StringBuffer body = new StringBuffer();
+			values = columnNames.split(",");
+			appendTd(values, body);
+			
+			StringBuffer sb = new StringBuffer();
+			sb.append("<table>").append(head).append("<tbody>").append(body).append("</tbody></table>");
+			StringBuffer form = new StringBuffer();
+			form.append("<form></form>");
+			pageContext.getOut().println();
+		} catch (IOException ignored) {
+		}
+		return EVAL_PAGE;
+	}
+
+	private void appendTd(String[] values, StringBuffer sb) {
+		sb.append("<tr>");
+		for ( int i = 0; i < values.length; i++){
+			sb.append("<td>").append(values[i]).append("</td>");
+		}
+		sb.append("</tr>");
+	}
+	
+	
+}

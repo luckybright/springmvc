@@ -1,0 +1,6 @@
+127.0.0.1 - - [28/Apr/2014:14:44:22 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [28/Apr/2014:14:49:25 +0800] "GET /springmvc/ HTTP/1.1" 200 649
+127.0.0.1 - - [28/Apr/2014:14:49:25 +0800] "GET /springmvc/css/login.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Apr/2014:14:49:25 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [28/Apr/2014:14:49:51 +0800] "POST /springmvc/login.cmd HTTP/1.1" 200 1735
+127.0.0.1 - - [28/Apr/2014:14:49:55 +0800] "POST /springmvc/product/tableform.cmd HTTP/1.1" 200 -

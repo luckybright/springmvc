@@ -1,0 +1,27 @@
+package ming.service.impl;
+
+import java.util.List;
+
+import ming.bean.DemoBean;
+import ming.dao.IDemoBeanDAO;
+import ming.service.ITransactionDemoService;
+
+public class TransactionDemoServiceImpl implements ITransactionDemoService {
+	private IDemoBeanDAO dao;
+	
+	public IDemoBeanDAO getDao() {
+		return dao;
+	}
+	public void setDao(IDemoBeanDAO dao) {
+		this.dao = dao;
+	}
+	@Override
+	public void tSaveInfo(DemoBean bean) throws Exception{
+		dao.save(bean);
+	}
+	@Override
+	public List<DemoBean> getAll() throws Exception {
+		return dao.getAll();
+	}
+
+}

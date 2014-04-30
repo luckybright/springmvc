@@ -1,0 +1,11 @@
+package ming.dao;
+
+import java.util.List;
+
+import ming.bean.WpHyflbaGc;
+
+public interface IWpHyflbaGcDAO {
+
+	public List<WpHyflbaGc> getAll();
+	public void saveHyflbaGc();
+}

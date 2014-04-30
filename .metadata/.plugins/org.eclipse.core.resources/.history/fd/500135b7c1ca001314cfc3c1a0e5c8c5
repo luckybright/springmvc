@@ -1,0 +1,27 @@
+package ming.tag;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class TableFormTag extends TagSupport {
+	private static final long serialVersionUID = 4413127515990076611L;
+
+	private String columnValues;
+	
+	public String getColumnValues() {
+		return columnValues;
+	}
+
+	public void setColumnValues(String columnValues) {
+		this.columnValues = columnValues;
+	}
+
+	public int doStartTag(){
+		try {
+			pageContext.getOut().println("<input type=\"text\" value=\"tag test\">");
+		} catch (IOException ignored) {
+		}
+		return EVAL_PAGE;
+	}
+}

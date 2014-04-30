@@ -1,0 +1,21 @@
+package ming.service.impl;
+
+import ming.dao.IWpHyflbaGcDAO;
+import ming.service.ITransactionDemoService;
+
+public class TransactionDemoServiceImpl implements ITransactionDemoService {
+	private IWpHyflbaGcDAO dao;
+	
+	public IWpHyflbaGcDAO getDao() {
+		return dao;
+	}
+	public void setDao(IWpHyflbaGcDAO dao) {
+		this.dao = dao;
+	}
+
+	@Override
+	public void tSaveInfo(String name) throws Exception{
+		dao.saveHyflbaGc();
+	}
+
+}
