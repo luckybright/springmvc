@@ -15,4 +15,5 @@
 	<import resource="classpath:config/jdbcSupport.xml"/>
 	<import resource="classpath:config/controllerBeans.xml"/>
 	<import resource="classpath:config/aopTransaction.xml"/>
+	<import resource="classpath:config/service/*.xml"/>
 </beans>  
