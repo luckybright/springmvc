@@ -11,9 +11,28 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd  
     http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-    
-	<import resource="classpath:config/jdbcSupport.xml"/>
-	<import resource="classpath:config/controllerBeans.xml"/>
-	<import resource="classpath:config/aopTransaction.xml"/>
-	<import resource="classpath:config/service/*.xml"/>
+	
+	<bean id="demoDao" class="ming.dao.impl.DemoBeanDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+	<bean id="demoService" class="ming.service.impl.TransactionDemoServiceImpl">
+		<property name="dao" ref="demoDao"></property>
+	</bean>
+	
+	
+	<bean id="demoController" class="ming.controller.DemoController">
+		<property name="methodNameResolver" ref="internalPathMethodNameResolver"/>
+		<property name="service" ref="demoService"></property>
+	</bean>
+
+	<bean id="demoUrlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/demo/getAll.cmd=demoController
+				/demo/saveDemo.cmd=demoController
+			</value>
+		</property>
+	</bean>
 </beans>  
