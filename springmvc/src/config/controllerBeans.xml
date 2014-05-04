@@ -65,10 +65,17 @@
 				/product/tableform.cmd=productController
 				/product/platformTransaction.cmd=productController
 				/product/saveDemo.cmd=productController
+			</value>
+		</property>
+	</bean>
+
+	<bean id="demoUrlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
 				/demo/getAll.cmd=demoController
 				/demo/saveDemo.cmd=demoController
 			</value>
 		</property>
 	</bean>
-
 </beans>  

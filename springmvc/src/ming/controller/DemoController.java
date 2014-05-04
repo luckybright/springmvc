@@ -19,6 +19,7 @@ public class DemoController extends MultiActionController{
 	}
 
 	public ModelAndView getAllHandler(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		resp.setContentType("text/html; charset=utf-8");
 		resp.getWriter().println(service.getAll());
 		return null;
 	}

@@ -14,7 +14,7 @@
 	<!-- 数据源 -->
 	<bean id="jndiDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName">
-			<value>java:comp/env/wp_fpgl</value>
+			<value>java:comp/env/datasource</value>
 		</property>
 	</bean>
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
