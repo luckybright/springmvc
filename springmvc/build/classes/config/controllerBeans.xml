@@ -13,11 +13,6 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
 	<bean id="wpHyflbaDao" class="ming.dao.impl.WpHyflbaDAO">
-<!-- 		<property name="mapperInterface" value="dao.UserMapper"></property> -->
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-	</bean>
-	
-	<bean id="demoDao" class="ming.dao.impl.DemoBeanDAO">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
 	
@@ -34,10 +29,6 @@
 		<property name="viewName" value="echoName.cmd" />
 	</bean>
 	
-	<bean id="demoService" class="ming.service.impl.TransactionDemoServiceImpl">
-		<property name="dao" ref="demoDao"></property>
-	</bean>
-	
 	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
 		<property name="suffix" value="Handler"></property>
 	</bean>
@@ -49,10 +40,6 @@
 		<property name="service" ref="demoService"></property>
 	</bean>
 	
-	<bean id="demoController" class="ming.controller.DemoController">
-		<property name="methodNameResolver" ref="internalPathMethodNameResolver"/>
-		<property name="service" ref="demoService"></property>
-	</bean>
 	<bean id="publicUrlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
@@ -65,8 +52,6 @@
 				/product/tableform.cmd=productController
 				/product/platformTransaction.cmd=productController
 				/product/saveDemo.cmd=productController
-				/demo/getAll.cmd=demoController
-				/demo/saveDemo.cmd=demoController
 			</value>
 		</property>
 	</bean>
