@@ -1,0 +1,69 @@
+<html>
+<head>
+<script>
+	
+</script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	var MSelect = function(selector) {
+		if (window == this)
+			return new MSelect(selector);
+
+		this.jqueryVal = $(selector);
+		var sl = this.jqueryVal;
+
+		return this;
+	};
+
+	function ComSelect() {
+		this.selectPanel = null;
+		this.searchPanel = null;
+		this.resultPanel = null;
+		this.addSelectPanel();
+
+	}
+	ComSelect.prototype.addSelectPanel = function() {
+		document.write("<div id='_m_com_select_panel' style='position:absolute;top:0;left:0;display:none;border:1px solid;'>");
+		document.write("<div id='_m_com_select_search'><input type='text'><input type='button' value='查询'></div>");
+		document.write("<div id='_m_com_select_result'>&nbsp;</div>");
+		document.write("</div>");
+		this.selectPanel = document.all._m_com_select_panel;
+		this.searchPanel = this.selectPanel._m_com_select_search;
+		this.resultPanel = this.selectPanel._m_com_select_result;
+		var inputs = document.getElementsByTagName("input", this.searchPanel);
+		inputs[1].onclick = function() {
+			//alert("asd");
+			
+		}
+		
+		var sPanel = this.selectPanel;
+		//实现div外点击,div消息的功能
+		document.onmousedown = function(event) {
+			var e = event || window.event;
+			var elem = e.srcElement || e.target;
+			while (elem) {
+				if (elem.id == "_m_com_select_panel") {
+					return;
+				}
+				elem = elem.parentNode;
+			}
+			sPanel.style.display = "none";
+		}
+	}
+
+	ComSelect.prototype.show = function(val) {
+		this.selectPanel.style.top = val.offsetTop + val.offsetHeight;
+		this.selectPanel.style.left = val.offsetLeft;
+		this.selectPanel.style.display = "";
+	}
+	var comS = new ComSelect();
+</script>
+</head>
+<body>
+	<input type="select" id="complexSelect" value="3"
+		onclick="javascript:comS.show(this);">
+	<div id="div1">abcdef</div>
+	<div id="div2"
+		style="position: absolute; background: #FF0000; left: 146; top: 0;">W</div>
+</body>
+</html>
