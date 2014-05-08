@@ -32,6 +32,7 @@
 			<value>
 				/demo/getAll.cmd=demoController
 				/demo/saveDemo.cmd=demoController
+				/demo/commonQuery.cmd=demoController
 			</value>
 		</property>
 	</bean>
