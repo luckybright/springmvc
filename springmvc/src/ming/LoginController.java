@@ -24,6 +24,6 @@ public class LoginController implements Controller{
 		}
 		log.info("test login");
 		req.setAttribute("aJspValue", "Redirect from spring to jsp");
-		return new ModelAndView("/jsp/demoQuery.jsp");
+		return new ModelAndView("/jsp/homepage.jsp");
 	}
 }
