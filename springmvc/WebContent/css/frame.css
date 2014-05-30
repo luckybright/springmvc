@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+body {
+	text-align: center;
+}
+#mainmenu{
+	width:800px;
+	float:none;
+	border: 1px solid;
+	text-align: center;
+}
+
+#mainframe{
+	float:none;
+}

@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.menu_ul {
+}
+
+.menu_li {
+	background-color: green;
+	float: left;
+	border: 1px solid;
+}
+
+.popup_menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	border: 1px solid;
+	list-style: none;
+}
